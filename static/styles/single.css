@@ -1,0 +1,80 @@
+.single-post{
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.single-post_left{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+
+/* adding top and bottom margn between tha various types of text based tags
+so that they don't look congested */
+/* note that the margin between paragraphs will only be added when there is a change iof paragraphs */
+.single-post_left_description p,
+.single-post_left_description h1,
+.single-post_left_description h2,
+.single-post_left_description h3,
+.single-post_left_description h4,
+.single-post_left_description h5
+{
+    margin: 20px 0; 
+}
+
+.single-post_left_description img{
+    width: 100%;
+    object-fit: cover;
+}
+
+.single-post_left_description pre{
+    width: 100%;
+    overflow-x: scroll;
+    padding: 20px;
+}
+
+
+.single-post_left_tex-container_img{
+    aspect-ratio: 720 / 500;
+    width: clamp(320px, 50vw, 720px);
+    height: clamp(220px, 35vw, 500px);
+    object-fit: cover;
+}
+
+.single-post_left_text-container{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+
+.single-post_left_tex-container_details{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+
+}
+
+.single-post_left_tex-container_details_authors{
+    font-size: 18px;
+}
+
+.single-post_left_tex-container_category-container{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.single-post_left_tex-container_categories{
+    background-color: var(--bgSoft);
+    padding: 5px;
+}
+
+@media (max-width: 1280px) {
+    .single-post{
+        flex-direction: column;
+    }
+}

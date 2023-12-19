@@ -1,0 +1,181 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+
+:root {
+    --bg: #0b1529;
+    --bgSoft: #1f3050;
+    --text: #dee4eb;
+    --textSoft: #cbd2d9;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 100%;
+}
+
+*,
+*::after,
+*::before {
+    box-sizing: inherit;
+    margin: 0;
+
+}
+
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+
+}
+
+body.light {
+    background-color: var(--text);
+    color: var(--bg);
+}
+
+
+
+
+
+a {
+    color: inherit;
+    /* inherit the color from parent */
+    text-decoration: none;
+    text-transform: capitalize;
+}
+
+
+
+
+.container {
+    font-family: 'Inter', sans-serif;
+    margin: auto;
+    /* automatically center the container */
+    max-width: 1366px;
+    padding-left: 50px;
+    padding-right: 50px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.list_item {
+    width: 100%;
+    display: flex;
+    gap: 20px;
+    align-items: start;
+    border: 2px solid var(--bgSoft);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+
+.list_item_image {
+    /* width: 100%;
+    height: 100%; */
+    /* width: 280px;
+    height: 200px; */
+    width: clamp(200px, 280px, 340px);
+    height: clamp(160px, 240px, 300px);
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.list_item_texts {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.list_item_details {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.list_item_details_avatar-img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.single-post_left_tex-container_details_avatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+
+
+.list_item_category {
+    text-transform: capitalize;
+    background-color: var(--bgSoft);
+    color: var(--textSoft);
+    padding: 5px;
+}
+
+.list_item_category-container {
+    font-size: 16px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.liste_item_details_authors {
+    text-transform: capitalize;
+}
+
+
+
+
+
+
+
+
+@media (max-width: 1536px) {
+    .container {
+        max-width: 1336px;
+    }
+}
+
+@media (max-width: 1336px) {
+    .container {
+        max-width: 1280px;
+    }
+}
+
+@media (max-width: 1280px) {
+    .container {
+        max-width: 1024px;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .container {
+        max-width: 768px;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 640px;
+    }
+}
+
+
+@media (max-width: 640px) {
+    .container {
+        max-width: 475px;
+    }
+}

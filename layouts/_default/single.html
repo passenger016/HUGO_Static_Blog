@@ -1,0 +1,36 @@
+{{ define "main" }}
+
+<div class="single-post">
+    <div class="single-post_left">
+        <div class="single-post_left_text-container">
+            <img src={{.Params.image}} alt={{.Title}} class="single-post_left_tex-container_img">
+            <h1 class="single-post_left_tex-container_title">
+                {{.Title}}
+            </h1>
+            <p class="single-post_left_tex-container_description">
+                {{.Params.description}}
+            </p>
+            <div class="single-post_left_tex-container_category-container">
+                {{ range (.GetTerms "categories") }}
+                <a href={{.Permalink}} class="single-post_left_tex-container_categories">{{.Name}}</a>
+                {{ end }}
+            </div>
+            <div class="single-post_left_tex-container_details">
+                <img src={{.Params.avatar}} loading="lazy" alt="avatar"
+                    class="single-post_left_tex-container_details_avatar">
+                <span class="single-post_left_tex-container_details_authors">{{ range (.GetTerms "authors") }}
+                    <a href={{.Permalink}} class="single-post_left_tex-container_details_authors">{{.Name}}</a>
+                    {{ end }}</span>
+
+            </div>
+        </div>
+        <div class="single-post_left_description">
+            {{.Content}}
+        </div>
+    </div>
+    <div class="single-post_right">
+        {{ partial "sidebar" . }}
+    </div>
+</div>
+
+{{ end }}

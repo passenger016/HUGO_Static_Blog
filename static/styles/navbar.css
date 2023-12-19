@@ -1,0 +1,84 @@
+:root {
+    --bg: #0b1529;
+    --bgSoft: #1f3050;
+    --text: #dee4eb;
+    --textSoft: #cbd2d9;
+}
+
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+    height: 100px;
+}
+
+.links{
+    width: max-content;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.search-button{
+    display: flex;
+    width: max-content;
+    gap: 10px;
+    align-items: center;
+    background-color: var(--bgSoft);
+    color: var(--textSoft);
+    border-radius: 10px;
+    padding: 5px 10px;
+}
+
+.logo{
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.links{
+    font-size: 20px;
+}
+
+/* light mode dark mode toggle starts*/
+
+
+.toggle{
+    width: 60px;
+    height: 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background-color: var(--bgSoft);
+    border: 0.5px solid var(--textSoft);
+    padding: 5px;
+    position: relative;
+}
+
+.ball{
+    width: 27px;
+    height: 27px;
+    border-radius: 50%;
+    background-color: var(--textSoft);
+    position: absolute;
+    left: 0;
+    border: 1px solid var(--bgSoft);
+}
+
+.light .ball{
+    left: unset;
+    right: 0;
+}
+
+/* light mode dark mode toggle ends */
+
+
+
+@media (max-width: 768px){
+    .links,.logo{
+        font-size: 14px;
+    }
+}

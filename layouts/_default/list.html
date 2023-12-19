@@ -1,0 +1,45 @@
+{{ define "main" }}
+
+<div class="list">
+    {{ range .Paginator.Pages }}
+    <div class="list_item">
+
+        <!--We are not using .Params for title because it came as a default parameter hence we may not specifiy the .Params-->
+        <img src={{.Params.image}} alt={{.Title}} class="list_item_image">
+
+        <div class="list_item_texts">
+            <h1 class="list_item_texts_heading">
+                <!--The permalink helps to link back to the content-->
+                <a href={{.Permalink}}>{{.Title}}</a>
+            </h1>
+            <p class="list_item_texts_description">
+                {{.Params.description}}
+            </p>
+            <div class="list_item_details">
+                <div class="list_item_details_avatar-container">
+                    <img src={{.Params.avatar}} loading="lazy" alt="" class="list_item_details_avatar-img">
+                </div>
+                <span class="liste_item_details_authors">{{ range (.GetTerms "authors") }}
+                    <a href={{.Permalink}}>{{ .Name }}</a>
+                    {{ end }}</span>
+                <!--For pullings params from hugo.toml file we need to use .Site.Params--->
+                <!--We are formatting the data to follow the 'datFormat' mentioned in the hugo.toml file-->
+                <time>{{ dateFormat .Site.Params.dateFormat .Date}}</time>
+
+            </div>
+            <div class="list_item_category-container">
+                <!-- This Hugo template directive initiates a range loop. 
+                    It iterates over each element in the list of categories associated with the current content (page or post). The `.GetTerms "categories"` fetches the list of categories for the current content. -->
+                <!--We are inside the range of categories and hence we will be choosing the .Name inside the range of categories-->
+                {{ range (.GetTerms "categories") }}
+                <a href={{.Permalink}} class="list_item_category">{{.Name}}</a>
+                {{ end }}
+
+            </div>
+        </div>
+
+    </div>
+    {{ end }}
+</div>
+
+{{ end }}
